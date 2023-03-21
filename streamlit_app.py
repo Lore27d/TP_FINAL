@@ -105,7 +105,7 @@ data['Year'] = data.index.year
 data['Month'] = data.index.month
 plt.yticks([5, 15, 20, 25])
 #st.pyplot(data.plot(kind = "line", y = ['Temp']).figure)
-st.pyplot(sns.lineplot(x='Year' ,y='Temp', data=data, markers=True, dashes=False))
+st.pyplot(sns.lineplot(x='Year' ,y='Temp', data=data).figure)
 
 
 def RMSE(predicted, actual):
