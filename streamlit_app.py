@@ -39,10 +39,10 @@ B = st.date_input(
 
 # Funcion Prediccion
 def prediccion_fecha():
-    #inicio = A.strftime("%Y") + '-' + A.strftime("%m")
-    inicio = datetime.strptime(A, '%Y/%m')
-    #fin = B.strftime("%Y") + '-' + B.strftime("%m")
-    fin = datetime.strptime(B, '%Y/%m')
+    inicio = A.strftime("%Y") + '-' + A.strftime("%m")
+    
+    fin = B.strftime("%Y") + '-' + B.strftime("%m")
+
 
 
     df_pred = pd.DataFrame()
