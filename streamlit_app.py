@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 import statsmodels
 import pickle
 import shelve
-import datetime
+from datetime import date, time, datetime
 
 
 st.title("Predicción de Temperatura")
