@@ -29,7 +29,7 @@ with open('./df.pkl', 'rb') as f_df:
 
 A = st.date_input(
     "Fecha de Inicio",
-    date(1909, 1, 1)
+    date(2018, 1, 1)
     )
 
 B = st.date_input(
@@ -37,7 +37,7 @@ B = st.date_input(
     date(2023, 4, 1)
     )
 
-    # Funcion Prediccion
+# Funcion Prediccion
 def prediccion_fecha():
     inicio = A.strftime("%Y") + '-' + A.strftime("%m")
     fin = B.strftime("%Y") + '-' + B.strftime("%m")
@@ -89,12 +89,6 @@ def prediccion_fecha():
 
     prediccion['Temp'] = predicciones
     return prediccion
-
-
-
-
-
-
 
 
 
