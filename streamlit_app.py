@@ -29,12 +29,12 @@ with open('./df.pkl', 'rb') as f_df:
 
 A = st.date_input(
     "Fecha de Inicio",
-    None
+    date(1909, 1, 1)
     )
 
 B = st.date_input(
     "Fecha de Inicio",
-    None
+    date(2023, 4, 1)
     )
 
     # Funcion Prediccion
