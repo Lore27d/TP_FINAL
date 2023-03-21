@@ -16,7 +16,9 @@ modelos = shelve.open("./modelos_y_data.db")
 model_est = modelos["model_est"]
 results_ARIMA = modelos["model_arima"]
 
-
+# Levantamos el df_test con las predicciones de test
+with open('./df_test.pkl', 'rb') as f_df_test:
+        dataset_test = pickle.load(f_df_test)
 
 # Levantamos el df para la funcion
 with open('./df.pkl', 'rb') as f_df:
