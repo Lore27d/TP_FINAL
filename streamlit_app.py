@@ -101,14 +101,17 @@ fig = plt.figure(figsize=(15,15))
 #st.pyplot(dataset_test.plot(kind = "line", y = ['temp_min', 'model_ARIMA','predict_est']).figure)
 data = prediccion_fecha()
 data.set_index('Fecha', inplace=True )
-data['Year'] = data.index.year
-data['Month'] = data.index.month
-data['Año-Mes'] = str(data['Year']) +'-'+ str(data['Month'])
+dg = data.groupby(pd.PeriodIndex(data.index, freq="M"))['Temp'].mean()
+
+
+#data['Year'] = data.index.year
+#data['Month'] = data.index.month
+#data['Año-Mes'] = str(data['Year']) +'-'+ str(data['Month'])
 #plt.yticks([5, 15, 20, 25])
 #st.pyplot(data.plot(kind = "line", y = ['Temp']).figure)
 a4_dims = (11.7, 8.27)
 fig, ax = plt.subplots(figsize=a4_dims)
-st.pyplot(sns.lineplot(x='Año-Mes' ,y='Temp', data=data).figure)
+st.pyplot(sns.lineplot(x='Fecha' ,y='Temp', data=dg).figure)
 
 
 def RMSE(predicted, actual):
