@@ -38,7 +38,7 @@ B = st.date_input(
     )
 
     # Funcion Prediccion
-def prediccion_fecha(fecha_pred):
+def prediccion_fecha():
     inicio = A.strftime("%Y") + '-' + A.strftime("%m")
     fin = B.strftime("%Y") + '-' + B.strftime("%m")
 
@@ -49,11 +49,11 @@ def prediccion_fecha(fecha_pred):
     df_pred['Month'] = df.index.month
     #df_pred
 
-    fecha = datetime.strptime(fecha_pred, '%Y/%m')
+    #fecha = datetime.strptime(fecha_pred, '%Y/%m')
 
     años = []
     año = 2022
-    for i in range(0,(fecha.year-año)+1):
+    for i in range(0,(fin.year-año)+1):
         años.append(año)
         año += 1
     
@@ -61,7 +61,7 @@ def prediccion_fecha(fecha_pred):
         if(año != años[-1]):
             i = 12
         elif(año == años[-1]):
-            i= fecha.month
+            i= fin.month
         for i in range (0,i):
             df_pred.loc[df_pred.shape[0]] = [año,i+1]
 
