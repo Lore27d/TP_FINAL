@@ -18,7 +18,7 @@ results_ARIMA = modelos["model_arima"]
 
 
 # Levantamos el df para la funcion
-with open('TP_FINAL/df.pkl', 'rb') as f_df:
+with open('./df.pkl', 'rb') as f_df:
         df = pickle.load(f_df)
 
 # Funcion Prediccion
