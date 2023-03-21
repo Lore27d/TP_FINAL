@@ -31,7 +31,7 @@ def prediccion_fecha(fecha_pred):
     df_pred.set_index = df.index
     df_pred['Year'] = df.index.year
     df_pred['Month'] = df.index.month
-    df_pred
+    #df_pred
 
     fecha = datetime.strptime(fecha_pred, '%Y/%m')
 
