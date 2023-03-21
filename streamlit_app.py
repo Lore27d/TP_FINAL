@@ -12,19 +12,11 @@ from datetime import date, time, datetime
 st.title("Predicción de Temperatura")
 
 
-A = st.date_input(
-    "Fecha de Inicio",
-    date(1909, 1, 1))
-
-B = st.date_input(
-    "Fecha de Inicio",
-    date(2023, 4, 1))
-
-
 # Levantamos los modelos
 modelos = shelve.open("./modelos_y_data.db")
 model_est = modelos["model_est"]
 results_ARIMA = modelos["model_arima"]
+
 
 # Levantamos el df_test con las predicciones de test
 with open('./df_test.pkl', 'rb') as f_df_test:
@@ -34,7 +26,18 @@ with open('./df_test.pkl', 'rb') as f_df_test:
 with open('./df.pkl', 'rb') as f_df:
         df = pickle.load(f_df)
 
-# Funcion Prediccion
+
+A = st.date_input(
+    "Fecha de Inicio",
+    #date(1909, 1, 1)
+    )
+
+B = st.date_input(
+    "Fecha de Inicio",
+    #date(2023, 4, 1)
+    )
+
+    # Funcion Prediccion
 def prediccion_fecha(fecha_pred):
     
     df_pred = pd.DataFrame()
@@ -83,6 +86,12 @@ def prediccion_fecha(fecha_pred):
 
     prediccion['Temp'] = predicciones
     return prediccion
+
+
+
+
+
+
 
 
 
