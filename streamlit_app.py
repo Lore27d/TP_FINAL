@@ -98,7 +98,7 @@ def prediccion_fecha():
 
 
 
-st.write(prediccion_fecha('2025/2'))
+#st.write(prediccion_fecha('2025/2'))
 
 
 fig = plt.figure(figsize=(15,15))
