@@ -61,7 +61,7 @@ def prediccion_fecha():
         if(año != años[-1]):
             i = 12
         elif(año == años[-1]):
-            i= fin.month
+            i= B.month
         for i in range (0,i):
             df_pred.loc[df_pred.shape[0]] = [año,i+1]
 
