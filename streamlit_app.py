@@ -101,8 +101,9 @@ fig = plt.figure(figsize=(15,15))
 #st.pyplot(dataset_test.plot(kind = "line", y = ['temp_min', 'model_ARIMA','predict_est']).figure)
 data = prediccion_fecha()
 data.set_index('Fecha', inplace=True )
-st.pyplot(data.plot(kind = "line", y = ['Temp']).figure)
 plt.yticks([5, 15, 20, 25])
+st.pyplot(data.plot(kind = "line", y = ['Temp']).figure)
+
 
 
 def RMSE(predicted, actual):
