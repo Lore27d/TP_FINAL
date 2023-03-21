@@ -33,7 +33,7 @@ A = st.date_input(
     )
 
 B = st.date_input(
-    "Fecha de Inicio",
+    "Fecha de Fin",
     date(2023, 4, 1)
     )
 
