@@ -29,7 +29,7 @@ with open('./df.pkl', 'rb') as f_df:
 
 A = st.date_input(
     "Fecha de Inicio",
-    date(2018, 1, 1)
+    date(1909, 1, 1)
     )
 
 B = st.date_input(
