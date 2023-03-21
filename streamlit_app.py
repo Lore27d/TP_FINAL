@@ -103,7 +103,7 @@ data = prediccion_fecha()
 data.set_index('Fecha', inplace=True )
 data['Year'] = data.index.year
 data['Month'] = data.index.month
-data['Año-Mes'] = datetime.strptime(str(data['Year'][i]) +'-'+ str(data['Month'][i]), "%Y-%m")
+data['Año-Mes'] = datetime.strptime(str(data['Year']) +'-'+ str(data['Month']), "%Y-%m")
 #plt.yticks([5, 15, 20, 25])
 #st.pyplot(data.plot(kind = "line", y = ['Temp']).figure)
 a4_dims = (11.7, 8.27)
