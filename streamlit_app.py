@@ -27,13 +27,14 @@ with open('./df.pkl', 'rb') as f_df:
         df = pickle.load(f_df)
 
 
-A = st.date_input(
-    "Fecha de Inicio",
-    date(1909, 1, 1)
-    )
+#A = st.date_input(
+#    "Fecha de Inicio",
+#    date(1909, 1, 1)
+#    )
+A = date(1909, 1, 1)
 
 B = st.date_input(
-    "Fecha de Fin",
+    "Seleccione la fecha hasta la cual desea realizar su predicción",
     date(2023, 4, 1)
     )
 
@@ -54,7 +55,7 @@ def prediccion_fecha():
     #fecha = datetime.strptime(fecha_pred, '%Y/%m')
 
     años = []
-    año = 1850
+    año = 2022
     for i in range(0,(B.year-año)+1):
         años.append(año)
         año += 1
@@ -94,7 +95,6 @@ def prediccion_fecha():
 
 
 st.write(prediccion_fecha())
-
 
 fig = plt.figure(figsize=(15,15))
 
