@@ -39,7 +39,10 @@ B = st.date_input(
 
     # Funcion Prediccion
 def prediccion_fecha(fecha_pred):
-    
+    inicio = A.strftime("%Y") + '-' + A.strftime("%m")
+    fin = B.strftime("%Y") + '-' + B.strftime("%m")
+
+
     df_pred = pd.DataFrame()
     df_pred.set_index = df.index
     df_pred['Year'] = df.index.year
@@ -76,7 +79,7 @@ def prediccion_fecha(fecha_pred):
         df_pred['Fecha'][i] = datetime.strptime(str(df_pred['Year'][i]) +'-'+ str(df_pred['Month'][i]), "%Y-%m")   
 
     pred_reg = model_est.predict(df_pred[['timeIndex','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec']])
-    pred_arima = results_ARIMA.get_prediction(start='1909-01',end=fecha)
+    pred_arima = results_ARIMA.get_prediction(start= inicio,end=fin)
     pred_arima = pred_arima.predicted_mean
 
 
