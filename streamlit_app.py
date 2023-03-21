@@ -39,8 +39,10 @@ B = st.date_input(
 
 # Funcion Prediccion
 def prediccion_fecha():
-    inicio = A.strftime("%Y") + '-' + A.strftime("%m")
-    fin = B.strftime("%Y") + '-' + B.strftime("%m")
+    #inicio = A.strftime("%Y") + '-' + A.strftime("%m")
+    inicio = datetime.strptime(A, '%Y/%m')
+    #fin = B.strftime("%Y") + '-' + B.strftime("%m")
+    fin = datetime.strptime(B, '%Y/%m')
 
 
     df_pred = pd.DataFrame()
@@ -57,13 +59,13 @@ def prediccion_fecha():
         años.append(año)
         año += 1
     
-    #for año in años:
-    #    if(año != años[-1]):
-    #        i = 12
-    #    elif(año == años[-1]):
-    #        i= B.month
-    #    for i in range (0,i):
-    #        df_pred.loc[df_pred.shape[0]] = [año,i+1]
+    for año in años:
+        if(año != años[-1]):
+            i = 12
+        elif(año == años[-1]):
+            i= B.month
+        for i in range (0,i):
+            df_pred.loc[df_pred.shape[0]] = [año,i+1]
 
     dummies_mes_pred = pd.get_dummies(df_pred["Month"], drop_first=True)
     dummies_pred=pd.DataFrame(dummies_mes_pred)
