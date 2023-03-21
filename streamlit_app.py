@@ -102,7 +102,7 @@ fig = plt.figure(figsize=(15,15))
 data = prediccion_fecha()
 data.set_index('Fecha', inplace=True )
 st.pyplot(data.plot(kind = "line", y = ['Temp']).figure)
-
+plt.yticks([5, 15, 20, 25])
 
 
 def RMSE(predicted, actual):
