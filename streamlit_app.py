@@ -11,6 +11,16 @@ from datetime import date, time, datetime
 
 st.title("Predicción de Temperatura")
 
+
+A = st.date_input(
+    "Fecha de Inicio",
+    datetime.date(1909, 1, 1))
+
+B = st.date_input(
+    "Fecha de Inicio",
+    datetime.date(2023, 4, 1))
+
+
 # Levantamos los modelos
 modelos = shelve.open("./modelos_y_data.db")
 model_est = modelos["model_est"]
