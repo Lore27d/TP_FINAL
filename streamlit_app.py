@@ -51,11 +51,11 @@ def prediccion_fecha():
 
     #fecha = datetime.strptime(fecha_pred, '%Y/%m')
 
-    #años = []
-    #año = 2022
-    #for i in range(0,(B.year-año)+1):
-    #    años.append(año)
-    #    año += 1
+    años = []
+    año = 2022
+    for i in range(0,(B.year-año)+1):
+        años.append(año)
+        año += 1
     
     #for año in años:
     #    if(año != años[-1]):
