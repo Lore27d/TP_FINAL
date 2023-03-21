@@ -51,19 +51,19 @@ def prediccion_fecha():
 
     #fecha = datetime.strptime(fecha_pred, '%Y/%m')
 
-    años = []
-    año = 2022
-    for i in range(0,(B.year-año)+1):
-        años.append(año)
-        año += 1
+    #años = []
+    #año = 2022
+    #for i in range(0,(B.year-año)+1):
+    #    años.append(año)
+    #    año += 1
     
-    for año in años:
-        if(año != años[-1]):
-            i = 12
-        elif(año == años[-1]):
-            i= B.month
-        for i in range (0,i):
-            df_pred.loc[df_pred.shape[0]] = [año,i+1]
+    #for año in años:
+    #    if(año != años[-1]):
+    #        i = 12
+    #    elif(año == años[-1]):
+    #        i= B.month
+    #    for i in range (0,i):
+    #        df_pred.loc[df_pred.shape[0]] = [año,i+1]
 
     dummies_mes_pred = pd.get_dummies(df_pred["Month"], drop_first=True)
     dummies_pred=pd.DataFrame(dummies_mes_pred)
