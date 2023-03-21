@@ -88,7 +88,7 @@ def prediccion_fecha():
     prediccion['Fecha'] = df_pred['Fecha']
 
     prediccion['Temp'] = predicciones
-    return order(prediccion,decreasing = True)
+    return prediccion.sort_values(by='Fecha', ascending=False)
 
 
 st.write(prediccion_fecha())
