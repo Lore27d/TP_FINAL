@@ -53,7 +53,7 @@ def prediccion_fecha():
 
     años = []
     año = 2022
-    for i in range(0,(fin.year-año)+1):
+    for i in range(0,(B.year-año)+1):
         años.append(año)
         año += 1
     
