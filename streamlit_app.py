@@ -105,6 +105,8 @@ data['Year'] = data.index.year
 data['Month'] = data.index.month
 #plt.yticks([5, 15, 20, 25])
 #st.pyplot(data.plot(kind = "line", y = ['Temp']).figure)
+a4_dims = (11.7, 8.27)
+fig, ax = plt.subplots(figsize=a4_dims)
 st.pyplot(sns.lineplot(x='Year' ,y='Temp', data=data).figure)
 
 
