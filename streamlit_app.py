@@ -103,11 +103,12 @@ data = prediccion_fecha()
 data.set_index('Fecha', inplace=True )
 data['Year'] = data.index.year
 data['Month'] = data.index.month
+data['Año-Mes'] = datetime.strptime(str(data['Year'][i]) +'-'+ str(data['Month'][i]), "%Y-%m")
 #plt.yticks([5, 15, 20, 25])
 #st.pyplot(data.plot(kind = "line", y = ['Temp']).figure)
 a4_dims = (11.7, 8.27)
 fig, ax = plt.subplots(figsize=a4_dims)
-st.pyplot(sns.lineplot(x='Year' ,y='Temp', data=data).figure)
+st.pyplot(sns.lineplot(x='Año-Mes' ,y='Temp', data=data).figure)
 
 
 def RMSE(predicted, actual):
