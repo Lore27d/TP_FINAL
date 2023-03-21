@@ -10,7 +10,7 @@ import shelve
 st.title("Predicción de Temperatura")
 
 # Levantamos los modelos
-modelos = shelve.open("TP_FINAL/modelos_y_data.db")
+modelos = shelve.open("TP_FINAL/modelos_y_data.db.dat")
 model_est = modelos["model_est"]
 results_ARIMA = modelos["model_arima"]
 
