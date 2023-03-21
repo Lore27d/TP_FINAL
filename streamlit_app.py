@@ -91,14 +91,16 @@ def prediccion_fecha():
     prediccion['Fecha'] = df_pred['Fecha']
 
     prediccion['Temp'] = predicciones
-    return prediccion.sort_values(by='Fecha', ascending=False).head(48)
+    return prediccion.sort_values(by='Fecha', ascending=False).head(120)
 
 
 st.write(prediccion_fecha())
 
 fig = plt.figure(figsize=(15,15))
 
-st.pyplot(dataset_test.plot(kind = "line", y = ['temp_min', 'model_ARIMA','predict_est']).figure)
+#st.pyplot(dataset_test.plot(kind = "line", y = ['temp_min', 'model_ARIMA','predict_est']).figure)
+data = prediccion_fecha()
+st.pyplot(data.plot(kind = "line", y = ['Temp']).figure)
 
 
 
