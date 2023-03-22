@@ -98,17 +98,21 @@ st.write(prediccion_fecha())
 
 fig = plt.figure(figsize=(20,8))
 
-#st.pyplot(dataset_test.plot(kind = "line", y = ['temp_min', 'model_ARIMA','predict_est']).figure)
 data = prediccion_fecha()
 data.set_index('Fecha', inplace=True )
 dg = data.groupby(pd.PeriodIndex(data.index, freq="M"))['Temp'].mean().reset_index()
 data['Year'] = data.index.year
 data['Month'] = data.index.month
+
+
+
 plt.yticks([5, 15, 20, 25])
 st.pyplot(data.plot(kind = "line", y = ['Temp']).figure)
 
+data2 = data
+data2.set_index('Year', inplace=True )
 
-st.pyplot(sns.lineplot(x='Year' ,y='Temp', data=dg, markers=True, dashes=False).figure)
+st.pyplot(sns.lineplot(x='Year' ,y='Temp', data=data2, markers=True, dashes=False).figure)
 plt.yticks([10, 15, 20, 25])
 
 
