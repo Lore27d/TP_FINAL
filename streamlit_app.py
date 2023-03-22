@@ -102,12 +102,16 @@ fig = plt.figure(figsize=(20,8))
 data = prediccion_fecha()
 data.set_index('Fecha', inplace=True )
 dg = data.groupby(pd.PeriodIndex(data.index, freq="M"))['Temp'].mean().reset_index()
-
-
 data['Year'] = data.index.year
 data['Month'] = data.index.month
 plt.yticks([5, 15, 20, 25])
 st.pyplot(data.plot(kind = "line", y = ['Temp']).figure)
+
+
+st.pyplot(sns.lineplot(x='Year' ,y='Temp', data=data, markers=True, dashes=False).figure)
+plt.yticks([10, 15, 20, 25])
+
+
 
 
 def RMSE(predicted, actual):
