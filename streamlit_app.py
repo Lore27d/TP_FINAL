@@ -108,7 +108,7 @@ plt.yticks([5, 15, 20, 25])
 st.pyplot(data.plot(kind = "line", y = ['Temp']).figure)
 
 
-st.pyplot(sns.lineplot(x='Year' ,y='Temp', data=data, markers=True, dashes=False).figure)
+st.pyplot(sns.lineplot(x='Year' ,y='Temp', data=dg, markers=True, dashes=False).figure)
 plt.yticks([10, 15, 20, 25])
 
 
