@@ -109,10 +109,10 @@ data['Month'] = data.index.month
 plt.yticks([5, 15, 20, 25])
 st.pyplot(data.plot(kind = "line", y = ['Temp']).figure)
 
-data2 = data
-data2.set_index('Year', inplace=True )
+data.reset_index()
 
-st.pyplot(sns.lineplot(x='Year' ,y='Temp', data=data2, markers=True, dashes=False).figure)
+
+st.pyplot(sns.lineplot(x='Year' ,y='Temp', data=data, markers=True, dashes=False).figure)
 plt.yticks([10, 15, 20, 25])
 
 
