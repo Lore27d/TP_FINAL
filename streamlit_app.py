@@ -88,7 +88,8 @@ def prediccion_fecha():
 
     predicciones = [ pred_reg[x] + pred_arima[x] for x in range(0,len(pred_reg))] 
     prediccion = pd.DataFrame()
-    prediccion['Fecha'] = df_pred['Fecha']
+    #prediccion['Fecha'] = df_pred['Fecha']
+    prediccion['Fecha'] = datetime.strptime(df_pred['Fecha'], '%Y/%m')
 
     prediccion['Temp'] = predicciones
     return prediccion.sort_values(by='Fecha', ascending=False).head(120)
@@ -118,12 +119,12 @@ st.pyplot(plot1)
 
 
 
-def RMSE(predicted, actual):
-    mse = (predicted - actual) ** 2
-    rmse = np.sqrt(mse.sum() / mse.count())
-    return rmse
+#def RMSE(predicted, actual):
+#    mse = (predicted - actual) ** 2
+#    rmse = np.sqrt(mse.sum() / mse.count())
+#    return rmse
 
-st.write("Error de ARIMA")
-st.write(RMSE(dataset_test['model_ARIMA'], dataset_test['temp_min']))
-st.write("OLS")
-st.write(RMSE(dataset_test['predict_est'], dataset_test['temp_min']))
+#st.write("Error de ARIMA")
+#st.write(RMSE(dataset_test['model_ARIMA'], dataset_test['temp_min']))
+#st.write("OLS")
+#st.write(RMSE(dataset_test['predict_est'], dataset_test['temp_min']))
