@@ -111,7 +111,7 @@ plot0 = data.plot(kind = "line", y = ['Temp'])
 plot0 = plot0.figure
 st.pyplot(plot0)
 
-data.reset_index(drop=True)
+data.reset_index(drop=True,inplace=True)
 st.write("Prediccion anual")
 plot1 = sns.lineplot(x='Year' ,y='Temp', data=data, markers=True, dashes=False)
 plot1 = plot1.figure
