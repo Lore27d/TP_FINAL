@@ -101,7 +101,7 @@ fig = plt.figure(figsize=(15,15))
 #st.pyplot(dataset_test.plot(kind = "line", y = ['temp_min', 'model_ARIMA','predict_est']).figure)
 data = prediccion_fecha()
 data.set_index('Fecha', inplace=True )
-dg = data.groupby(pd.PeriodIndex(data.index, freq="M"))['Temp'].mean()
+dg = data.groupby(pd.PeriodIndex(data.index, freq="M"))['Temp'].mean().reset_index()
 
 
 #data['Year'] = data.index.year
