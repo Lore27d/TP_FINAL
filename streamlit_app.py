@@ -96,7 +96,7 @@ def prediccion_fecha():
 
 st.write(prediccion_fecha())
 
-fig = plt.figure(figsize=(15,15))
+fig = plt.figure(figsize=(20,8))
 
 #st.pyplot(dataset_test.plot(kind = "line", y = ['temp_min', 'model_ARIMA','predict_est']).figure)
 data = prediccion_fecha()
