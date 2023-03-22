@@ -88,8 +88,7 @@ def prediccion_fecha():
 
     predicciones = [ pred_reg[x] + pred_arima[x] for x in range(0,len(pred_reg))] 
     prediccion = pd.DataFrame()
-    #prediccion['Fecha'] = df_pred['Fecha']
-    prediccion['Fecha'] = datetime.strptime(df_pred['Fecha'], '%Y/%m')
+    prediccion['Fecha'] = df_pred['Fecha']
 
     prediccion['Temp'] = predicciones
     return prediccion.sort_values(by='Fecha', ascending=False).head(120)
