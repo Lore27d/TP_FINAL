@@ -35,7 +35,7 @@ A = date(1909, 1, 1)
 
 B = st.date_input(
     "Seleccione la fecha hasta la cual desea realizar su predicción",
-    date(2023, 4, 1)
+    date(2025, 12, 1)
     )
 
 # Funcion Prediccion
