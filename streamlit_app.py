@@ -107,12 +107,12 @@ data['Month'] = data.index.month
 
 #plt.yticks([5, 15, 20, 25])
 st.write("Prediccion mes a mes")
-st.pyplot(data.plot(kind = "line", y = ['Temp']).figure)
-
+plot0 = data.plot(kind = "line", y = ['Temp']).figure
+st.pyplot(plot0)
 
 st.write("Prediccion anual")
 st.pyplot(sns.lineplot(x='Year' ,y='Temp', data=data, markers=True, dashes=False).figure)
-plt.yticks([10, 15, 20, 25])
+
 
 
 
